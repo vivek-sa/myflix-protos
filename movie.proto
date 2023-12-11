@@ -29,3 +29,14 @@ message Pagination {
 message MovieId {
   string id = 1;  // Unique identifier for a movie. (ObjectId)
 }
+
+// Message containing a list of movies.
+message MovieList {
+  repeated Movie movies = 1;  // List of Movie messages.
+}
+
+// Definition of the MovieService service.
+service MovieService {
+  rpc GetAllMovies (Pagination) returns (MovieList);       // RPC to get a list of all movies with pagination.
+  rpc GetMovieById (MovieId) returns (Movie);         // RPC to get a specific movie by ID.
+}
