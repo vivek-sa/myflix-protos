@@ -16,8 +16,8 @@ message Pagination {
 // Message containing a list of genres.
 message GenreList {
   repeated Genre genres = 1;  // List of Genre messages.
-  int32 totalPages = 1;
-  int32 currentPage = 2;
+  int32 totalPages = 2;
+  int32 currentPage = 3;
 }
 
 // Definition of the GenreService service.
